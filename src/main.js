@@ -3,7 +3,7 @@ import { saveDesign, exportHtml, importDesign } from './editor-actions';
 
 const editor = unlayer.createEditor({
   id: 'editor-container',
-  projectId: 264544, // Add your project ID here
+  projectId: 264544,
   displayMode: 'email',
   locale: 'ru-RU',
 });
@@ -28,8 +28,7 @@ importButton.addEventListener('click', () => {
   importDesign(editor, fileLoader) 
 });
 
-fileLoader.addEventListener('click', (e) => {
-  filename.value = e.target.files[0].name;
-  console.log(e)
+fileLoader.addEventListener('change', (e) => {
+  filename.value = e.target.files[0].name.replace(/\.[^.$]+$/, '');;
   importDesign(editor, e.target);
 })
