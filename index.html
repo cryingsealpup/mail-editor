@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <script src="https://editor.unlayer.com/embed.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vite App</title>
+  </head>
+  <body>
+    <div class="panel">
+      <div class="panel__read">
+        <div class="button">
+          <button type="button" class="button-import">
+            Импортировать
+            <input type="file" id="loader" hidden accept=".json" />
+          </button>
+        </div>
+      </div>
+      <div class="panel__save">
+        <div class="panel__save-name">
+          <label>
+							<span>Название файла:</span>
+						<input type="text" class="input-filename">
+					</label>
+          <label for="is-save-date" class="input-date">Добавлять
+            дату в имя файла
+            <input type="checkbox" />
+          </label>
+        </div>
+        <div class="panel__save-buttons">
+          <button type="button" class="button-export">
+            Экспортировать HTML
+          </button>
+          <button type="button" class="button-save">
+            Сохранить шаблон
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="editor-container"></div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
